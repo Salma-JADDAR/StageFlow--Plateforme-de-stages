@@ -14,11 +14,11 @@ use App\Http\Resources\OffreStageResource;
 
 class AdminController extends Controller
 {
-    // ========== CONSULTER UTILISATEURS AVEC ORDER BY DESC ==========
+  
     public function consulterUtilisateurs()
     {
         try {
-            // 🔥 AJOUTER orderBy pour trier par date de création (du plus récent au plus ancien)
+        
             $users = User::orderBy('created_at', 'desc')->paginate(12);
             
             $formattedUsers = $users->map(function($user) {
