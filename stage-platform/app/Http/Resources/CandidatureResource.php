@@ -4,10 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CandidatureResource extends JsonResource
-{
-    public function toArray($request)
-    {
+class CandidatureResource extends JsonResource{
+    public function toArray($request){
         return [
             'idCandidature' => $this->idCandidature,
             'statut' => $this->statut,
