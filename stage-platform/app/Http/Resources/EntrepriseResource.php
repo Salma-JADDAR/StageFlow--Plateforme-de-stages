@@ -4,10 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class EntrepriseResource extends JsonResource
-{
-    public function toArray($request)
-    {
+class EntrepriseResource extends JsonResource{
+    public function toArray($request){
         return [
             'idEntreprise' => $this->idEntreprise,
             'nom' => $this->nom,
