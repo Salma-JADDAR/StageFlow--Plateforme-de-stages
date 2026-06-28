@@ -99,15 +99,13 @@ public function mesOffres(){
             'statut' => $offre->statut
         ]);
     }
-public function supprimerOffre($id)
-{
+public function supprimerOffre($id){
     try {
-        // 🔥 Récupérer l'offre même si elle est soft-deleted
+   
         $offre = OffreStage::where('entreprise_id', $this->getEntrepriseId())
             ->withTrashed()
             ->findOrFail($id);
-        
-        // 🔥 Vérifier si l'offre est déjà supprimée (soft-deleted)
+      
         if ($offre->trashed()) {
             return response()->json([
                 'success' => false,
@@ -115,8 +113,7 @@ public function supprimerOffre($id)
                 'code' => 'ALREADY_DELETED'
             ], 400);
         }
-        
-        // Vérifier si l'offre est publiée
+       
         if ($offre->statut === 'publiée') {
             return response()->json([
                 'success' => false,
@@ -124,8 +121,7 @@ public function supprimerOffre($id)
                 'code' => 'PUBLISHED_CANNOT_DELETE'
             ], 400);
         }
-        
-        // Soft delete
+      
         $offre->delete();
         
         return response()->json([
