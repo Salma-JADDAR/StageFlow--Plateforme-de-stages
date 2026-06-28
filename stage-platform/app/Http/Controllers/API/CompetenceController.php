@@ -88,8 +88,7 @@ class CompetenceController extends Controller
         return response()->json(['message' => 'Compétence ajoutée']);
     }
 
-    public function supprimerDuProfile($competenceId)
-    {
+    public function supprimerDuProfile($competenceId){
         $etudiant = auth()->user()->etudiant;
         $etudiant->competences()->detach($competenceId);
         return response()->json(['message' => 'Compétence supprimée']);
