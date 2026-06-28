@@ -294,8 +294,7 @@ class AdminController extends Controller
 
  
 
-    public function ajouterAdministrateur(Request $request)
-    {
+    public function ajouterAdministrateur(Request $request){
         try {
             $request->validate([
                 'nom' => 'required|string|max:255',
