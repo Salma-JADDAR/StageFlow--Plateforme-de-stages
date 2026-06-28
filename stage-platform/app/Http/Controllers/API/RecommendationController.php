@@ -17,8 +17,7 @@ class RecommendationController extends Controller
         $this->recommendationService = $recommendationService;
     }
 
-    public function refreshForEtudiant($etudiantId)
-    {
+    public function refreshForEtudiant($etudiantId){
         try {
             $etudiant = Etudiant::findOrFail($etudiantId);
             $this->recommendationService->refreshRecommendationsForEtudiant($etudiant);
