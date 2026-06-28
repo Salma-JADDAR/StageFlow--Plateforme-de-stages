@@ -232,8 +232,7 @@ public function supprimerOffre($id){
         ]);
     }
 
-    public function updateEntreprise(Request $request)
-    {
+    public function updateEntreprise(Request $request){
         $recruteur = auth()->user()->recruteur;
         $entreprise = $recruteur->entreprise;
         
