@@ -34,8 +34,7 @@ public function store(FormationRequest $request){
         return response()->json($formation);
     }
 
-    public function destroy($id)
-    {
+    public function destroy($id){
         $formation = Formation::findOrFail($id);
         $formation->delete();
         return response()->json(['message' => 'Formation supprimée']);
