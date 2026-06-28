@@ -57,8 +57,7 @@ class CompetenceController extends Controller
 
 
 
-    public function getMesCompetences()
-    {
+    public function getMesCompetences(){
         try {
             $etudiant = auth()->user()->etudiant;
             
