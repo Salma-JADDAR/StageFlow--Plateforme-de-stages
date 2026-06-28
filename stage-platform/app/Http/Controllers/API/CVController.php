@@ -38,8 +38,7 @@ class CVController extends Controller{
         }
     }
 
-public function download()
-{
+public function download(){
     try {
         $etudiant = auth()->user()->etudiant;
         
@@ -53,7 +52,7 @@ public function download()
             return response()->json(['error' => 'CV non trouvé'], 404);
         }
         
-        // 🔥 RENVOYER L'URL DU FICHIER AU LIEU DU FICHIER LUI-MÊME
+     
         $url = asset('storage/' . $cv->cheminFichier);
         
         return response()->json([
