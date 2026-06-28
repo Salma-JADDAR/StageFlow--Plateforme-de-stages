@@ -5,12 +5,10 @@ namespace Database\Factories;
 use App\Models\Etudiant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CVFactory extends Factory
-{
+class CVFactory extends Factory{
     protected $model = \App\Models\CV::class;
 
-    public function definition()
-    {
+    public function definition(){
         return [
             'etudiant_id' => Etudiant::factory(),
             'nomFichier' => $this->faker->word . '.pdf',
