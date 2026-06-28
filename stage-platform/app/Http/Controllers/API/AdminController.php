@@ -158,8 +158,7 @@ class AdminController extends Controller
         }
     }
 
-    public function supprimerUtilisateur($id)
-    {
+    public function supprimerUtilisateur($id){
         try {
             $user = User::findOrFail($id);
             $user->delete();
