@@ -12,10 +12,8 @@ use App\Http\Resources\CandidatureResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class RecruteurController extends Controller
-{
-    private function getEntrepriseId()
-    {
+class RecruteurController extends Controller{
+    private function getEntrepriseId(){
         return auth()->user()->recruteur->entreprise_id;
     }
 
