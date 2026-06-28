@@ -195,8 +195,7 @@ public function supprimerOffre($id){
         return new CandidatureResource($candidature);
     }
 
-       private function getCandidatureForRecruteur($id)
-    {
+       private function getCandidatureForRecruteur($id){
         $offresIds = OffreStage::where('entreprise_id', $this->getEntrepriseId())
             ->withTrashed()
             ->pluck('idOffre');
