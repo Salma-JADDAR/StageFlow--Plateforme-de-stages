@@ -65,8 +65,7 @@ public function index(Request $request){
     return OffreStageResource::collection($offres);
 }
 
-   public function show($id)
-{
+   public function show($id){
     $offre = OffreStage::with('entreprise', 'competences')->findOrFail($id);
     return new OffreStageResource($offre);
 }
