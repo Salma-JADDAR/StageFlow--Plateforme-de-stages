@@ -119,9 +119,8 @@ public function updateProfile(Request $request)
     return new CandidatureResource($candidature);
 }
 
-// 🔥 AJOUTER CETTE MÉTHODE
-private function notifierRecruteurNouvelleCandidature($candidature)
-{
+
+private function notifierRecruteurNouvelleCandidature($candidature){
     try {
         $offre = $candidature->offre;
         $entreprise = $offre->entreprise;
