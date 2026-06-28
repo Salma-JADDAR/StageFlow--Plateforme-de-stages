@@ -6,19 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class UploadController extends Controller
-{
-    /**
-     * Upload de la photo de profil de l'étudiant.
-     */
-    public function photo(Request $request)
-    {
+class UploadController extends Controller{
+  
+    public function photo(Request $request){
         $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // max 2 Mo
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', 
         ]);
 
         $file = $request->file('photo');
-        $path = $file->store('photos', 'public'); // stocke dans storage/app/public/photos
+        $path = $file->store('photos', 'public'); 
 
         $url = asset('storage/' . $path);
 
