@@ -24,15 +24,14 @@ class RecommendationService{
         return min(100, round($score, 2));
     }
 
- public function getRecommendationsForEtudiant(Etudiant $etudiant, $limit = 10)
-{
+ public function getRecommendationsForEtudiant(Etudiant $etudiant, $limit = 10){
     $offres = OffreStage::where('statut', 'publiée')->with('competences')->get();
     $scores = [];
     
     foreach ($offres as $offre) {
         $score = $this->calculerScore($etudiant, $offre);
         if ($score > 30) {
-            // Calculer les compétences matching
+           
             $compEtudiant = $etudiant->competences;
             $compOffre = $offre->competences;
             
@@ -68,8 +67,7 @@ class RecommendationService{
     
     usort($scores, fn($a, $b) => $b['score'] <=> $a['score']);
     $scores = array_slice($scores, 0, $limit);
-    
-    // Sauvegarde en base
+  
     foreach ($scores as $item) {
         Recommendation::updateOrCreate(
             ['etudiant_id' => $etudiant->idEtudiant, 'offre_id' => $item['offre']->idOffre],
