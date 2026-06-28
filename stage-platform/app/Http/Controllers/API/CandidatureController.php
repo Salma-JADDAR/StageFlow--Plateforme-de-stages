@@ -8,8 +8,7 @@ use App\Http\Resources\CandidatureResource;
 
 class CandidatureController extends Controller
 {
-    public function index()
-    {
-        // Pour admin ou recruteur, déjà géré ailleurs
+    public function index(){
+       
     }
 }
