@@ -17,8 +17,7 @@ class NotificationController extends Controller{
         ]);
     }
 
-    public function markAsRead($id)
-    {
+    public function markAsRead($id){
         $notification = Notification::where('user_id', auth()->id())
             ->findOrFail($id);
             
