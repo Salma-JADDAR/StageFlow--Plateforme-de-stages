@@ -85,8 +85,7 @@ class RecommendationService{
     return $scores;
 }
 
-    public function refreshRecommendationsForEtudiant(Etudiant $etudiant)
-    {
+    public function refreshRecommendationsForEtudiant(Etudiant $etudiant){
         Recommendation::where('etudiant_id', $etudiant->idEtudiant)->delete();
         return $this->getRecommendationsForEtudiant($etudiant);
     }
