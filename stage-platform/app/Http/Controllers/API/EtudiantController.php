@@ -208,8 +208,7 @@ public function profile(){
     }
     return response()->json($data);
 }
-public function annulerCandidature($id)
-{
+public function annulerCandidature($id){
     $candidature = Candidature::where('etudiant_id', auth()->user()->etudiant->idEtudiant)
         ->where('idCandidature', $id)
         ->firstOrFail();
