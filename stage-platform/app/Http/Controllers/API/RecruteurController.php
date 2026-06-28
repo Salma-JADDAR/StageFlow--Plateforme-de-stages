@@ -188,8 +188,7 @@ public function supprimerOffre($id){
         return new CandidatureResource($candidature);
     }
 
-      public function refuserCandidature($id)
-    {
+      public function refuserCandidature($id){
         $candidature = $this->getCandidatureForRecruteur($id);
         $candidature->update(['statut' => 'refusée']);
         $this->notifierEtudiantCandidature($candidature, 'refusée');
