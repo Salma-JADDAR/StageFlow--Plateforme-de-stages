@@ -17,12 +17,10 @@ class RecruteurController extends Controller{
         return auth()->user()->recruteur->entreprise_id;
     }
 
- // app/Http/Controllers/API/RecruteurController.php
-public function mesOffres()
-{
-    // 🔥 AJOUTER with('competences') POUR CHARGER LES COMPÉTENCES
+public function mesOffres(){
+    
     $offres = OffreStage::where('entreprise_id', $this->getEntrepriseId())
-        ->with('entreprise', 'competences') // 🔥 AJOUTER competences
+        ->with('entreprise', 'competences') 
         ->get();
     return OffreStageResource::collection($offres);
 }
