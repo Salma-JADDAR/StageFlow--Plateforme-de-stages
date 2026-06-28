@@ -7,10 +7,8 @@ use App\Models\CV;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class CVController extends Controller
-{
-    public function getInfo()
-    {
+class CVController extends Controller{
+    public function getInfo(){
         try {
             $etudiant = auth()->user()->etudiant;
             
