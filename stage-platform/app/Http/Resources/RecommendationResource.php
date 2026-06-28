@@ -4,10 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class RecommendationResource extends JsonResource
-{
-    public function toArray($request)
-    {
+class RecommendationResource extends JsonResource{
+    public function toArray($request){
         return [
             'idRecommendation' => $this->idRecommendation,
             'scoreMatching' => $this->scoreMatching,
