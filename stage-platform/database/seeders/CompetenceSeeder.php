@@ -5,10 +5,8 @@ namespace Database\Seeders;
 use App\Models\Competence;
 use Illuminate\Database\Seeder;
 
-class CompetenceSeeder extends Seeder
-{
-    public function run()
-    {
+class CompetenceSeeder extends Seeder{
+    public function run(){
         $competences = [
             ['nom' => 'PHP', 'categorie' => 'Langage'],
             ['nom' => 'Laravel', 'categorie' => 'Framework'],
