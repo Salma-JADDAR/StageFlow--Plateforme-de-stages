@@ -24,17 +24,14 @@ class UploadController extends Controller{
         ], 200);
     }
 
-    /**
-     * Upload du CV de l'étudiant (PDF, DOC, DOCX).
-     */
-    public function cv(Request $request)
-    {
+  
+    public function cv(Request $request){
         $request->validate([
-            'cv' => 'required|file|mimes:pdf,doc,docx|max:5120', // max 5 Mo
+            'cv' => 'required|file|mimes:pdf,doc,docx|max:5120', 
         ]);
 
         $file = $request->file('cv');
-        $path = $file->store('cvs', 'public'); // stocke dans storage/app/public/cvs
+        $path = $file->store('cvs', 'public'); 
 
         $url = asset('storage/' . $path);
 
