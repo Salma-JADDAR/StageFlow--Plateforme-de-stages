@@ -151,9 +151,8 @@ public function supprimerOffre($id){
         ]);
     }
 
-    // 🔥 AJOUTER : Supprimer définitivement
-    public function supprimerDefinitivement($id)
-    {
+  
+    public function supprimerDefinitivement($id){
         $offre = OffreStage::where('entreprise_id', $this->getEntrepriseId())
             ->onlyTrashed()
             ->findOrFail($id);
