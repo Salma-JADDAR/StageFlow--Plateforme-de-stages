@@ -72,8 +72,7 @@ class AuthController extends Controller{
         return new \App\Http\Resources\UserResource(auth()->user());
     }
 
-    public function update(Request $request)
-    {
+    public function update(Request $request){
         $user = auth()->user();
         
         $validated = $request->validate([
