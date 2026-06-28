@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class AuthController extends Controller
-{
-    public function register(RegisterRequest $request)
-    {
+class AuthController extends Controller{
+    public function register(RegisterRequest $request){
         $user = User::create([
             'nom' => $request->nom,
             'prenom' => $request->prenom,
