@@ -292,22 +292,7 @@ class AdminController extends Controller
         }
     }
 
-    public function genererRapport()
-    {
-        try {
-            $stats = [
-                'users_count' => User::count(),
-                'offres_count' => OffreStage::count(),
-                'candidatures_count' => Candidature::count(),
-                'match_moyen' => Recommendation::avg('scoreMatching') ?? 0,
-                'offres_en_attente' => OffreStage::where('statut', 'en_attente')->count()
-            ];
-            return response()->json($stats);
-        } catch (\Exception $e) {
-            Log::error('Erreur genererRapport: ' . $e->getMessage());
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
-    }
+ 
 
     public function ajouterAdministrateur(Request $request)
     {
