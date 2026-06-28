@@ -32,9 +32,7 @@ class CompetenceController extends Controller
         }
     }
 
-    // 🔥 AJOUTE CETTE MÉTHODE (optionnelle, pour mise à jour)
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
         try {
             $competence = Competence::findOrFail($id);
             $competence->update($request->only(['nom', 'categorie']));
