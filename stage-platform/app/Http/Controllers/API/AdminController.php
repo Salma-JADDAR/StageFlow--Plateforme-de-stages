@@ -119,9 +119,8 @@ class AdminController extends Controller
         }
     }
 
-    // ========== LES AUTRES MÉTHODES RESTENT INCHANGÉES ==========
-    public function desactiverUtilisateur($id)
-    {
+   
+    public function desactiverUtilisateur($id){
         try {
             $user = User::findOrFail($id);
             
