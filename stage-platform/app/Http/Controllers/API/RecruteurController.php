@@ -313,19 +313,18 @@ public function supprimerOffre($id){
         }
     }
 
-    // 🔥 MÉTHODE DE NOTIFICATION (À IMPLÉMENTER)
+   
 private function notifierAdminNouvelleOffre($offre)
 {
     try {
-        // Récupérer tous les administrateurs
+    
         $admins = \App\Models\User::where('role', 'admin')->get();
-        
-        // Créer une notification pour chaque admin
+   
         foreach ($admins as $admin) {
             \App\Models\Notification::create([
                 'user_id' => $admin->id,
                 'type' => 'nouvelle_offre',
-                'titre' => '📢 Nouvelle offre en attente',
+                'titre' => ' Nouvelle offre en attente',
                 'message' => "L'offre '{$offre->titre}' a été soumise par l'entreprise et attend votre validation.",
                 'lien' => "/admin/offres/{$offre->idOffre}",
                 'est_lu' => false,
