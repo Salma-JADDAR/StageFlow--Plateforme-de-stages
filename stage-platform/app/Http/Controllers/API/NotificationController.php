@@ -26,8 +26,7 @@ class NotificationController extends Controller{
         return response()->json(['message' => 'Notification marquée comme lue']);
     }
 
-    public function markAllAsRead()
-    {
+    public function markAllAsRead(){
         Notification::where('user_id', auth()->id())
             ->where('est_lu', false)
             ->update(['est_lu' => true]);
