@@ -168,8 +168,7 @@ class AdminController extends Controller
         }
     }
 
-    public function validerOffre($id)
-    {
+    public function validerOffre($id){
         try {
             $offre = OffreStage::findOrFail($id);
             
@@ -184,7 +183,7 @@ class AdminController extends Controller
                 'dateValidation' => now()
             ]);
             
-            // 🔥 NOTIFIER LE RECRUTEUR
+            
             $this->notifierRecruteurOffreValidee($offre);
             
             return response()->json([
