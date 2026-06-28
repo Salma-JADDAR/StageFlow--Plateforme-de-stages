@@ -28,8 +28,7 @@ public function store(FormationRequest $request){
     return response()->json($formation, 201);
 }
 
-    public function update(FormationRequest $request, $id)
-    {
+    public function update(FormationRequest $request, $id){
         $formation = Formation::findOrFail($id);
         $formation->update($request->validated());
         return response()->json($formation);
