@@ -25,9 +25,8 @@ public function mesOffres(){
     return OffreStageResource::collection($offres);
 }
 
-    // 🔥 MODIFIÉ : L'offre passe en 'en_attente' au lieu de 'publiée'
-    public function publierOffre(OffreStageRequest $request)
-    {
+ 
+    public function publierOffre(OffreStageRequest $request){
         $offre = OffreStage::create(array_merge(
             $request->validated(),
             [
