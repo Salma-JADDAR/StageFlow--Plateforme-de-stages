@@ -47,10 +47,9 @@ public function mesOffres(){
         ], 201);
     }
 
-    public function modifierOffre(OffreStageRequest $request, $id)
-    {
+    public function modifierOffre(OffreStageRequest $request, $id){
         $offre = OffreStage::where('entreprise_id', $this->getEntrepriseId())
-            ->withTrashed() // Permet de modifier même les offres supprimées (soft-deleted)
+            ->withTrashed() 
             ->findOrFail($id);
         
         if ($offre->statut === 'publiée') {
