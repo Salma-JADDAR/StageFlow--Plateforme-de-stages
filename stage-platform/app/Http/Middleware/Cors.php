@@ -5,8 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class Cors
-{
+class Cors{
     public function handle(Request $request, Closure $next)
     {
         if ($request->getMethod() === 'OPTIONS') {
