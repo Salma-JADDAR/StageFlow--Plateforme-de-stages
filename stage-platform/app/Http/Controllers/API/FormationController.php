@@ -7,11 +7,9 @@ use App\Models\Formation;
 use App\Http\Requests\FormationRequest;
 use Illuminate\Http\Request;
 
-class FormationController extends Controller
-{
-    // Rendre la liste publique (pas besoin d'authentification)
-    public function index()
-    {
+class FormationController extends Controller{
+   
+    public function index(){
         $formations = Formation::all();
         return response()->json($formations);
     }
