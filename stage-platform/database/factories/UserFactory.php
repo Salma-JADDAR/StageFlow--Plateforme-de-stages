@@ -6,10 +6,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
-{
-    public function definition()
-    {
+class UserFactory extends Factory{
+    public function definition(){
         return [
             'nom' => $this->faker->lastName,
             'prenom' => $this->faker->firstName,
