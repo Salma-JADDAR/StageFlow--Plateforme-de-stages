@@ -256,8 +256,7 @@ public function supprimerOffre($id){
         return response()->json($entreprise);
     }
 
-    public function getProfile()
-    {
+    public function getProfile(){
         try {
             $user = auth()->user();
             $recruteur = $user->recruteur;
