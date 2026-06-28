@@ -251,8 +251,7 @@ class AdminController extends Controller
         }
     }
 
-    public function archiverOffre($id)
-    {
+    public function archiverOffre($id){
         try {
             $offre = OffreStage::findOrFail($id);
             
