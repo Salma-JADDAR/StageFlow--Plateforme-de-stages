@@ -181,8 +181,7 @@ public function supprimerOffre($id){
     
     return CandidatureResource::collection($candidatures);
 }
-  public function accepterCandidature($id)
-    {
+  public function accepterCandidature($id){
         $candidature = $this->getCandidatureForRecruteur($id);
         $candidature->update(['statut' => 'acceptée']);
         $this->notifierEtudiantCandidature($candidature, 'acceptée');
