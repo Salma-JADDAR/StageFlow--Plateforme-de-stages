@@ -5,12 +5,10 @@ namespace Database\Factories;
 use App\Models\Entreprise;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class OffreStageFactory extends Factory
-{
+class OffreStageFactory extends Factory{
     protected $model = \App\Models\OffreStage::class;
 
-    public function definition()
-    {
+    public function definition(){
         return [
             'entreprise_id' => Entreprise::factory(),
             'titre' => $this->faker->jobTitle,
