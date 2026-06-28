@@ -66,8 +66,7 @@ public function download(){
     }
 }
 
-    public function upload(Request $request)
-    {
+    public function upload(Request $request){
         try {
             $request->validate([
                 'cv' => 'required|file|mimes:pdf,doc,docx|max:5120'
@@ -81,28 +80,26 @@ public function download(){
             
             $file = $request->file('cv');
             
-            // 🔥 Supprimer l'ancien fichier physique MAIS garder l'enregistrement
+    
             if ($etudiant->cv) {
-                // Supprimer le fichier physique
+              
                 if (Storage::disk('public')->exists($etudiant->cv->cheminFichier)) {
                     Storage::disk('public')->delete($etudiant->cv->cheminFichier);
                 }
-                // 🔥 UPDATE au lieu de DELETE + CREATE
-                // On va mettre à jour l'enregistrement existant
+             
                 $cv = $etudiant->cv;
             } else {
-                // Créer un nouvel enregistrement
+            
                 $cv = new CV();
                 $cv->etudiant_id = $etudiant->idEtudiant;
             }
             
-            // Sauvegarder le nouveau fichier avec un nom unique
+           
             $originalName = $file->getClientOriginalName();
             $extension = $file->getClientOriginalExtension();
             $uniqueName = time() . '_' . uniqid() . '.' . $extension;
             $path = $file->storeAs('cvs', $uniqueName, 'public');
-            
-            // Mettre à jour les champs
+        
             $cv->nomFichier = $originalName;
             $cv->cheminFichier = $path;
             $cv->taille = round($file->getSize() / 1024, 2);
