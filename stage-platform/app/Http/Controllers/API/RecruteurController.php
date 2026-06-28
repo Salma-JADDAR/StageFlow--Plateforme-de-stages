@@ -283,8 +283,7 @@ public function supprimerOffre($id){
         }
     }
 
-    public function updateProfile(Request $request)
-    {
+    public function updateProfile(Request $request){
         try {
             $recruteur = auth()->user()->recruteur;
             
