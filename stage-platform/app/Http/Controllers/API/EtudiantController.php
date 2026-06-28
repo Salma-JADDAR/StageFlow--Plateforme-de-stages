@@ -80,8 +80,7 @@ public function updateProfile(Request $request)
         return OffreStageResource::collection($offres);
     }
 
-    public function showOffre($id)
-    {
+    public function showOffre($id){
         $offre = OffreStage::findOrFail($id);
         return new OffreStageResource($offre);
     }
