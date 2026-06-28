@@ -4,14 +4,12 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class EtudiantResource extends JsonResource
-{
-    public function toArray($request)
-    {
+class EtudiantResource extends JsonResource{
+    public function toArray($request){
         return [
             'idEtudiant' => $this->idEtudiant,
             'photo' => $this->photo,
-            'photo_url' => $this->photo ? asset('storage/' . $this->photo) : null,  // ← AJOUTEZ CETTE LIGNE
+            'photo_url' => $this->photo ? asset('storage/' . $this->photo) : null,  
             'description' => $this->description,
             'ville' => $this->ville,
             'telephone' => $this->telephone,
