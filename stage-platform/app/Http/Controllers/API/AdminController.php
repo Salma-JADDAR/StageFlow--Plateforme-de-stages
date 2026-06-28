@@ -343,9 +343,8 @@ class AdminController extends Controller
         }
     }
 
-    // 🔥 NOTIFICATION RECRUTEUR
-    private function notifierRecruteurOffreValidee($offre)
-    {
+ 
+    private function notifierRecruteurOffreValidee($offre){
         try {
             $recruteurs = \App\Models\Recruteur::where('entreprise_id', $offre->entreprise_id)->get();
             
@@ -353,7 +352,7 @@ class AdminController extends Controller
                 \App\Models\Notification::create([
                     'user_id' => $recruteur->user_id,
                     'type' => 'offre_validee',
-                    'titre' => '✅ Offre validée',
+                    'titre' => ' Offre validée',
                     'message' => "Votre offre '{$offre->titre}' a été validée et est maintenant publiée",
                     'lien' => "/gestion-offres",
                     'est_lu' => false,
