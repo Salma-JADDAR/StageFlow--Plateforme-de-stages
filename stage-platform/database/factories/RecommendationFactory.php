@@ -6,12 +6,10 @@ use App\Models\Etudiant;
 use App\Models\OffreStage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class RecommendationFactory extends Factory
-{
+class RecommendationFactory extends Factory{
     protected $model = \App\Models\Recommendation::class;
 
-    public function definition()
-    {
+    public function definition(){
         return [
             'etudiant_id' => Etudiant::factory(),
             'offre_id' => OffreStage::factory(),
