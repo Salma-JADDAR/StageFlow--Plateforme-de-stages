@@ -5,11 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
-{
-    public function run()
-    {
-        // Admin
+class UserSeeder extends Seeder{
+    public function run(){
+     
         User::create([
             'nom' => 'Admin',
             'prenom' => 'System',
@@ -18,7 +16,7 @@ class UserSeeder extends Seeder
             'role' => 'admin',
         ]);
 
-        // 10 étudiants, 5 recruteurs
+     
         User::factory(10)->create(['role' => 'etudiant']);
         User::factory(5)->create(['role' => 'recruteur']);
     }
