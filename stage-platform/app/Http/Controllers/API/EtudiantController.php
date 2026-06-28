@@ -191,8 +191,7 @@ public function mesCandidatures(){
     }
 }
 
-    public function suivreCandidature($id)
-    {
+    public function suivreCandidature($id){
         $candidature = Candidature::where('etudiant_id', auth()->user()->etudiant->idEtudiant)
             ->findOrFail($id);
         return new CandidatureResource($candidature);
