@@ -11,8 +11,7 @@ class EntrepriseController extends Controller{
         return response()->json(Entreprise::all());
     }
 
-public function storePublic(Request $request)
-{
+public function storePublic(Request $request){
     $validated = $request->validate([
         'nom' => 'required|string|max:255',
         'emailContact' => 'required|email',
