@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CV extends Model
-{
+class CV extends Model{
     use HasFactory;
     
-    // Force le nom de la table (important !)
+
     protected $table = 'cvs';
     
     protected $primaryKey = 'idCV';
