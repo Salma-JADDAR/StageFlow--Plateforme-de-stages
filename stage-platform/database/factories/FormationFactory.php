@@ -5,12 +5,10 @@ namespace Database\Factories;
 use App\Models\Etudiant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class FormationFactory extends Factory
-{
+class FormationFactory extends Factory{
     protected $model = \App\Models\Formation::class;
 
-    public function definition()
-    {
+    public function definition(){
         return [
             'etudiant_id' => Etudiant::factory(),
             'diplome' => $this->faker->randomElement(['Baccalauréat', 'DUT', 'Licence', 'Master', 'Doctorat']),
