@@ -128,11 +128,11 @@ public function download(){
             $cv = $etudiant->cv;
             
             if ($cv) {
-                // Supprimer le fichier physique
+              
                 if (Storage::disk('public')->exists($cv->cheminFichier)) {
                     Storage::disk('public')->delete($cv->cheminFichier);
                 }
-                // Supprimer l'enregistrement
+             
                 $cv->delete();
             }
             
