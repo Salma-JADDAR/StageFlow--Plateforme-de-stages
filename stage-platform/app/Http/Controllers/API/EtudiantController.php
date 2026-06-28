@@ -198,8 +198,7 @@ public function mesCandidatures(){
     }
 
   
-public function profile()
-{
+public function profile(){
     $etudiant = auth()->user()->etudiant;
     $data = $etudiant->toArray();
     if ($etudiant->photo) {
