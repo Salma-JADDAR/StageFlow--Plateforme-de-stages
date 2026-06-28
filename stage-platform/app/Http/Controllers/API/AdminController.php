@@ -50,11 +50,11 @@ class AdminController extends Controller
         }
     }
 
-    // ========== CONSULTER OFFRES AVEC ORDER BY DESC ==========
+
     public function consulterOffres()
     {
         try {
-            // 🔥 AJOUTER orderBy pour trier par date de création (du plus récent au plus ancien)
+        
             $offres = OffreStage::with('entreprise')
                 ->orderBy('created_at', 'desc')
                 ->paginate(12);
