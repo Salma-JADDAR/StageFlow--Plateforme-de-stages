@@ -225,8 +225,7 @@ class AdminController extends Controller
         }
     }
 
-    public function reactiverOffre($id)
-    {
+    public function reactiverOffre($id){
         try {
             $offre = OffreStage::findOrFail($id);
             
