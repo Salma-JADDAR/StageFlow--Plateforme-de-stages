@@ -42,9 +42,8 @@ class CompetenceController extends Controller
         }
     }
 
-    // 🔥 AJOUTE CETTE MÉTHODE (optionnelle, pour suppression)
-    public function destroy($id)
-    {
+   
+    public function destroy($id){
         try {
             $competence = Competence::findOrFail($id);
             $competence->delete();
