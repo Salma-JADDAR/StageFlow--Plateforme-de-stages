@@ -39,9 +39,8 @@ public function store(FormationRequest $request){
         $formation->delete();
         return response()->json(['message' => 'Formation supprimée']);
     }
-    public function getPredefinedFormations()
-{
-    // Récupérer les formations qui n'appartiennent à aucun étudiant (formations de base)
+    public function getPredefinedFormations(){
+   
     $formations = Formation::whereNull('etudiant_id')->get();
     return response()->json($formations);
 }
