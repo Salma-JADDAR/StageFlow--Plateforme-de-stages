@@ -12,9 +12,8 @@ class CompetenceController extends Controller
         return response()->json(Competence::all());
     }
 
-    // 🔥 AJOUTE CETTE MÉTHODE
-    public function store(Request $request)
-    {
+   
+    public function store(Request $request){
         try {
             $request->validate([
                 'nom' => 'required|string|max:255',
