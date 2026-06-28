@@ -137,9 +137,8 @@ public function supprimerOffre($id){
             'message' => 'Erreur lors de la suppression: ' . $e->getMessage()
         ], 500);
     }
-}    // 🔥 AJOUTER : Restaurer une offre supprimée
-    public function restaurerOffre($id)
-    {
+}    
+    public function restaurerOffre($id){
         $offre = OffreStage::where('entreprise_id', $this->getEntrepriseId())
             ->onlyTrashed()
             ->findOrFail($id);
