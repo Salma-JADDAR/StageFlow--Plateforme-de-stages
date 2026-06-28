@@ -142,8 +142,7 @@ class AdminController extends Controller
         }
     }
 
-    public function activerUtilisateur($id)
-    {
+    public function activerUtilisateur($id){
         try {
             $user = User::findOrFail($id);
             $user->is_active = true;
