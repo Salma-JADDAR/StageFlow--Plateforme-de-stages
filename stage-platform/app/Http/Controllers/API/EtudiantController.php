@@ -23,20 +23,17 @@ class EtudiantController extends Controller
     }
 
 
-
-// app/Http/Controllers/API/EtudiantController.php
-
 public function updateProfile(Request $request)
 {
     $etudiant = auth()->user()->etudiant;
     
-    \Log::info('📥 Données reçues pour updateProfile:', $request->all());
+    \Log::info(' Données reçues pour updateProfile:', $request->all());
     
     $validated = $request->validate([
         'telephone' => 'nullable|string|max:20',
         'ville' => 'nullable|string|max:255',
         'description' => 'nullable|string',
-        'photo' => 'nullable|string|max:500', // ✅ Augmenter la taille
+        'photo' => 'nullable|string|max:500', 
         'cv' => 'nullable|string|max:500',
         'formation_id' => 'nullable|exists:formations,idFormation',
         'competences' => 'nullable|array',
@@ -44,29 +41,21 @@ public function updateProfile(Request $request)
         'competences.*.niveau' => 'in:débutant,intermédiaire,avancé,expert'
     ]);
     
-    // ❌ SUPPRIMER CETTE PARTIE
-    // if (isset($validated['photo']) && $validated['photo']) {
-    //     if (strpos($validated['photo'], 'http') === 0) {
-    //         $validated['photo'] = str_replace(url('/storage/'), '', $validated['photo']);
-    //         $validated['photo'] = str_replace('storage/', '', $validated['photo']);
-    //     }
-    // }
+ 
     
-    \Log::info('✅ Données validées (sans nettoyage):', $validated);
-    
-    // Mettre à jour l'étudiant (garder l'URL complète)
+    \Log::info(' Données validées (sans nettoyage):', $validated);
+   
     $etudiant->update([
         'telephone' => $validated['telephone'] ?? $etudiant->telephone,
         'ville' => $validated['ville'] ?? $etudiant->ville,
         'description' => $validated['description'] ?? $etudiant->description,
-        'photo' => $validated['photo'] ?? $etudiant->photo, // ✅ Garder l'URL complète
+        'photo' => $validated['photo'] ?? $etudiant->photo, 
         'cv' => $validated['cv'] ?? $etudiant->cv,
         'formation_id' => $validated['formation_id'] ?? $etudiant->formation_id
     ]);
     
     \Log::info('👤 Étudiant après mise à jour:', $etudiant->fresh()->toArray());
     
-    // Mettre à jour les compétences
     if (isset($validated['competences'])) {
         $competencesData = [];
         foreach ($validated['competences'] as $comp) {
