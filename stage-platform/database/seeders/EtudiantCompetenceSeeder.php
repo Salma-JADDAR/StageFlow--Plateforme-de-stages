@@ -6,10 +6,8 @@ use App\Models\Etudiant;
 use App\Models\Competence;
 use Illuminate\Database\Seeder;
 
-class EtudiantCompetenceSeeder extends Seeder
-{
-    public function run()
-    {
+class EtudiantCompetenceSeeder extends Seeder{
+    public function run(){
         $etudiants = Etudiant::all();
         $competences = Competence::all();
 
