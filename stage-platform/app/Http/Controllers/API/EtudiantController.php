@@ -18,8 +18,7 @@ class EtudiantController extends Controller
 {
  protected $recommendationService;
 
-    public function __construct(RecommendationService $recommendationService)
-    {
+    public function __construct(RecommendationService $recommendationService){
         $this->recommendationService = $recommendationService;
     }
 
