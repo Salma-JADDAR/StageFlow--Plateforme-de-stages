@@ -28,24 +28,19 @@ class RecommendationController extends Controller
         }
     }
 
-    /**
-     * Ajouter un feedback sur une recommandation
-     */
-    public function sendFeedback(Request $request, $id)
-    {
+ 
+    public function sendFeedback(Request $request, $id){
         try {
             $request->validate([
                 'pertinent' => 'required|boolean'
             ]);
 
             $recommendation = Recommendation::findOrFail($id);
-            
-            // Vérifier que la recommandation appartient à l'étudiant connecté
+          
             if ($recommendation->etudiant_id !== auth()->user()->etudiant->idEtudiant) {
                 return response()->json(['error' => 'Non autorisé'], 403);
             }
-            
-            // Ajouter le feedback (vous pouvez ajouter une colonne 'feedback' dans la table recommendations)
+           
             $recommendation->update([
                 'feedback' => $request->pertinent,
                 'feedback_date' => now()
