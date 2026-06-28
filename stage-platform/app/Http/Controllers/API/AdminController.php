@@ -88,11 +88,10 @@ class AdminController extends Controller
         }
     }
 
-    // ========== LISTER ADMINISTRATEURS AVEC ORDER BY DESC ==========
     public function listerAdministrateurs()
     {
         try {
-            // 🔥 AJOUTER orderBy pour trier par date de création (du plus récent au plus ancien)
+           
             $admins = User::where('role', 'admin')
                 ->orderBy('created_at', 'desc')
                 ->paginate(20);
