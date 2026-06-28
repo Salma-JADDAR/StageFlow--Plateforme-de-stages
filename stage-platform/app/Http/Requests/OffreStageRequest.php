@@ -4,12 +4,10 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class OffreStageRequest extends FormRequest
-{
+class OffreStageRequest extends FormRequest{
     public function authorize() { return true; }
- // app/Http/Requests/OffreStageRequest.php
-public function rules()
-{
+
+public function rules(){
     $rules = [
         'titre' => 'sometimes|required|string|max:255',
         'description' => 'sometimes|required|string',
