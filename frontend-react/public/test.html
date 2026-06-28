@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Inscription</title>
+</head>
+<body>
+    <h2>Test d'inscription direct</h2>
+    <form id="registerForm">
+        <input type="text" id="nom" placeholder="Nom" required><br>
+        <input type="text" id="prenom" placeholder="Prénom" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Mot de passe" required><br>
+        <input type="password" id="password_confirmation" placeholder="Confirmer" required><br>
+        <button type="submit">S'inscrire</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('registerForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const data = {
+                nom: document.getElementById('nom').value,
+                prenom: document.getElementById('prenom').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                password_confirmation: document.getElementById('password_confirmation').value,
+                role: "etudiant"
+            };
+            
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+            } catch (error) {
+                document.getElementById('result').innerHTML = 'Erreur: ' + error.message;
+            }
+        };
+    </script>
+</body>
+</html>
