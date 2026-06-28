@@ -6,10 +6,8 @@ use App\Models\Etudiant;
 use App\Models\OffreStage;
 use App\Models\Recommendation;
 
-class RecommendationService
-{
-    public function calculerScore(Etudiant $etudiant, OffreStage $offre): float
-    {
+class RecommendationService{
+    public function calculerScore(Etudiant $etudiant, OffreStage $offre): float{
         $compEtudiant = $etudiant->competences->pluck('idCompetence')->toArray();
         $compOffre = $offre->competences->pluck('idCompetence')->toArray();
         
@@ -19,7 +17,6 @@ class RecommendationService
         $union = array_unique(array_merge($compEtudiant, $compOffre));
         $score = (count($intersection) / max(1, count($union))) * 100;
 
-        // Bonus si ville correspond
         if ($etudiant->ville && $offre->ville === $etudiant->ville) {
             $score *= 1.05;
         }
