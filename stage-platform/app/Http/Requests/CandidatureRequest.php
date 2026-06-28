@@ -4,11 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CandidatureRequest extends FormRequest
-{
+class CandidatureRequest extends FormRequest{
     public function authorize() { return true; }
-    public function rules()
-    {
+    public function rules(){
         return [
             'lettreMotivation' => 'required|string'
         ];
