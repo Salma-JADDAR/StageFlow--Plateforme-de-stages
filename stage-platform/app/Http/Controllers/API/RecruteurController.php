@@ -202,8 +202,7 @@ public function supprimerOffre($id){
         return Candidature::whereIn('offre_id', $offresIds)->findOrFail($id);
     }
 
-    public function getEntreprise()
-    {
+    public function getEntreprise(){
         $recruteur = auth()->user()->recruteur;
         $entreprise = $recruteur->entreprise;
         
