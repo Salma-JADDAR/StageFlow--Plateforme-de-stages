@@ -196,8 +196,7 @@ class AdminController extends Controller
         }
     }
 
-    public function rejeterOffre(Request $request, $id)
-    {
+    public function rejeterOffre(Request $request, $id){
         try {
             $offre = OffreStage::findOrFail($id);
             
@@ -213,7 +212,7 @@ class AdminController extends Controller
                 'dateRejet' => now()
             ]);
             
-            // 🔥 NOTIFIER LE RECRUTEUR
+        
             $this->notifierRecruteurValidation($offre, 'refusée', $request->raison ?? 'Non conforme');
             
             return response()->json([
