@@ -14,16 +14,15 @@ class FormationController extends Controller{
         return response()->json($formations);
     }
 
-    // Pour ajouter une formation, l'étudiant doit être connecté
-public function store(FormationRequest $request)
-{
+    
+public function store(FormationRequest $request){
     $formation = Formation::create([
         'diplome' => $request->diplome,
         'etablissement' => $request->etablissement,
         'niveau' => $request->niveau,
         'anneeDebut' => $request->anneeDebut,
         'anneeFin' => $request->anneeFin,
-        'etudiant_id' => auth()->user()->etudiant->idEtudiant // Lier à l'étudiant connecté
+        'etudiant_id' => auth()->user()->etudiant->idEtudiant 
     ]);
     
     return response()->json($formation, 201);
