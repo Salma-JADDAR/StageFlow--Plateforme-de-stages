@@ -85,15 +85,13 @@ public function updateProfile(Request $request)
         return new OffreStageResource($offre);
     }
 
-   public function postuler(Request $request, $offreId)
-{
+   public function postuler(Request $request, $offreId){
     $request->validate([
         'lettreMotivation' => 'required|string'
     ]);
 
     $etudiant = auth()->user()->etudiant;
 
-    // Vérifier si déjà postulé
     $exists = Candidature::where('etudiant_id', $etudiant->idEtudiant)
         ->where('offre_id', $offreId)
         ->exists();
@@ -108,7 +106,6 @@ public function updateProfile(Request $request)
         'statut' => 'en_attente'
     ]);
 
-    // Calculer et enregistrer le score de matching
     $score = $this->recommendationService->calculerScore($etudiant, OffreStage::find($offreId));
     
     \App\Models\Recommendation::updateOrCreate(
@@ -116,7 +113,7 @@ public function updateProfile(Request $request)
         ['scoreMatching' => $score, 'dateGeneration' => now()]
     );
 
-    // 🔥 AJOUTER LA NOTIFICATION POUR LE RECRUTEUR
+   
     $this->notifierRecruteurNouvelleCandidature($candidature);
 
     return new CandidatureResource($candidature);
