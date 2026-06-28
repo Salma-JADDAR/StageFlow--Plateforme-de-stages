@@ -220,8 +220,7 @@ public function annulerCandidature($id){
     $candidature->delete();
     return response()->json(['message' => 'Candidature annulée']);
 }
-    public function getRecommendations()
-    {
+    public function getRecommendations(){
         try {
             $etudiant = auth()->user()->etudiant;
             
