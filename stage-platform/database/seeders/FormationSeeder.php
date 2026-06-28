@@ -5,10 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Formation;
 
-class FormationSeeder extends Seeder
-{
-    public function run()
-    {
+class FormationSeeder extends Seeder{
+    public function run(){
         $formations = [
             ['diplome' => 'Licence en Informatique', 'etablissement' => 'Faculté des Sciences Semlalia', 'niveau' => 'Bac+3', 'anneeDebut' => 2020, 'anneeFin' => 2023],
             ['diplome' => 'Master Data Science', 'etablissement' => 'École Nationale des Sciences Appliquées', 'niveau' => 'Bac+5', 'anneeDebut' => 2023, 'anneeFin' => 2025],
