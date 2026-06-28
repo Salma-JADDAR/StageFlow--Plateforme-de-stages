@@ -77,8 +77,7 @@ public function mesOffres(){
         return new OffreStageResource($offre);
     }
 
- public function changerStatut(Request $request, $id)
-    {
+ public function changerStatut(Request $request, $id){
         $request->validate([
             'statut' => 'required|in:publiée,archivée,en_attente'
         ]);
