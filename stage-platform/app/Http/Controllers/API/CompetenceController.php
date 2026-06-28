@@ -74,9 +74,7 @@ class CompetenceController extends Controller
         }
     }
 
-    // Assurez-vous que ces méthodes existent aussi
-    public function ajouterAuProfile(Request $request)
-    {
+    public function ajouterAuProfile(Request $request){
         $request->validate([
             'competence_id' => 'required|exists:competences,idCompetence',
             'niveau' => 'required|in:débutant,intermédiaire,avancé,expert'
