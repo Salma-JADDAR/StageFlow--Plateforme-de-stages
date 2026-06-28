@@ -4,12 +4,10 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class EntrepriseFactory extends Factory
-{
+class EntrepriseFactory extends Factory{
     protected $model = \App\Models\Entreprise::class;
 
-    public function definition()
-    {
+    public function definition(){
         return [
             'nom' => $this->faker->company,
             'description' => $this->faker->paragraph,
