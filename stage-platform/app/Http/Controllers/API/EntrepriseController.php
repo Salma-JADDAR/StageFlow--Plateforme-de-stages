@@ -26,9 +26,8 @@ public function storePublic(Request $request){
     $entreprise = Entreprise::create($validated);
     return response()->json($entreprise, 201);
 }
-// RecruteurController.php
-public function updateEntreprise(Request $request)
-{
+
+public function updateEntreprise(Request $request){
     $recruteur = auth()->user()->recruteur;
     $entreprise = $recruteur->entreprise;
     
