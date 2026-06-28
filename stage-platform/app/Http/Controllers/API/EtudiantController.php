@@ -69,8 +69,7 @@ public function updateProfile(Request $request)
         'data' => $etudiant->fresh()->load('competences')
     ]);
 }
-    public function getAllOffres(Request $request)
-    {
+    public function getAllOffres(Request $request){
         $offres = OffreStage::where('statut', 'publiée')
             ->when($request->ville, fn($q) => $q->where('ville', $request->ville))
             ->when($request->mot_cle, function($q) use ($request) {
