@@ -6,10 +6,8 @@ use App\Models\OffreStage;
 use App\Models\Competence;
 use Illuminate\Database\Seeder;
 
-class OffreCompetenceSeeder extends Seeder
-{
-    public function run()
-    {
+class OffreCompetenceSeeder extends Seeder{
+    public function run(){
         $offres = OffreStage::all();
         $competences = Competence::all();
 
