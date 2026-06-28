@@ -125,8 +125,7 @@ private function notifierRecruteurNouvelleCandidature($candidature){
         $offre = $candidature->offre;
         $entreprise = $offre->entreprise;
         $etudiant = $candidature->etudiant;
-        
-        // Récupérer tous les recruteurs de cette entreprise
+      
         $recruteurs = \App\Models\Recruteur::where('entreprise_id', $entreprise->idEntreprise)->get();
         
         foreach ($recruteurs as $recruteur) {
@@ -147,10 +146,9 @@ private function notifierRecruteurNouvelleCandidature($candidature){
     }
 }
 
-    // App\Http\Controllers\API\EtudiantController.php
+ 
 
-public function mesCandidatures()
-{
+public function mesCandidatures(){
     try {
         $etudiant = auth()->user()->etudiant;
         
@@ -163,7 +161,7 @@ public function mesCandidatures()
             ->orderBy('created_at', 'desc')
             ->get();
         
-        // Transformer les données pour s'assurer que les statuts sont corrects
+      
         $candidaturesData = $candidatures->map(function($candidature) {
             return [
                 'idCandidature' => $candidature->idCandidature,
