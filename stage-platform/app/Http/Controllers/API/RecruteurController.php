@@ -337,20 +337,19 @@ private function notifierAdminNouvelleOffre($offre)
     }
 }
 
-  private function notifierEtudiantCandidature($candidature, $statut)
-{
+  private function notifierEtudiantCandidature($candidature, $statut){
     try {
         $etudiant = $candidature->etudiant;
         $offre = $candidature->offre;
         
         $message = $statut === 'acceptée' 
-            ? "🎉 Votre candidature pour l'offre '{$offre->titre}' a été acceptée !"
-            : "💪 Votre candidature pour l'offre '{$offre->titre}' a été refusée. Continuez vos recherches !";
+            ? " Votre candidature pour l'offre '{$offre->titre}' a été acceptée !"
+            : " Votre candidature pour l'offre '{$offre->titre}' a été refusée. Continuez vos recherches !";
         
         \App\Models\Notification::create([
             'user_id' => $etudiant->user_id,
             'type' => 'candidature_' . $statut,
-            'titre' => $statut === 'acceptée' ? '✅ Candidature acceptée' : '❌ Candidature refusée',
+            'titre' => $statut === 'acceptée' ? 'Candidature acceptée' : ' Candidature refusée',
             'message' => $message,
             'lien' => "/mes-candidatures/{$candidature->idCandidature}",
             'est_lu' => false,
