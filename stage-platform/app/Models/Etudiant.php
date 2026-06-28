@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Etudiant extends Model
-{
+class Etudiant extends Model{
     use HasFactory;
 
     protected $primaryKey = 'idEtudiant';
- // app/Models/Etudiant.php
+
 protected $fillable = [
     'user_id', 'photo', 'description', 'ville', 'telephone', 'formation_id', 'competence_id'
 ];
 
    public function user()
     {
-        return $this->belongsTo(User::class, 'user_id'); // 🔥 Vérifier la clé étrangère
+        return $this->belongsTo(User::class, 'user_id'); 
     }
 
   
