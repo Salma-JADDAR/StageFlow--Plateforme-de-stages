@@ -41,8 +41,7 @@ class UploadController extends Controller{
         ], 200);
     }
 
-public function logo(Request $request)
-{
+public function logo(Request $request){
     try {
         $request->validate([
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
