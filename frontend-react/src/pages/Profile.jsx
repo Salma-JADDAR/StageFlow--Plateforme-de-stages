@@ -16,7 +16,6 @@ export default function Profile() {
   const [memberSince, setMemberSince] = useState('');
   const [lastLogin, setLastLogin] = useState('');
 
-  // ========== NOTIFICATIONS ==========
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
