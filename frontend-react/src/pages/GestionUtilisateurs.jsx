@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import api from '../api/axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 import toast from 'react-hot-toast';
-
 export default function GestionUtilisateurs() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
