@@ -1,5 +1,4 @@
 import api from './axios';
-
 export const getAllOffres = (params) =>
   api.get('/offres', { params });
 
@@ -18,6 +17,5 @@ export const updateOffre = (id, data) =>
 export const deleteOffre = (id) =>
   api.delete(`/recruteur/offres/${id}`);
 
-// Étudiant
 export const getOffresEtudiant = (params) =>
   api.get('/etudiant/offres', { params });
