@@ -4,7 +4,6 @@ import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
 
-// ========== IMAGES POUR LES CARTES ==========
 const baseImages = [
   '/images/do.png', '/images/do1.png', '/images/do2.png', '/images/do3.png',
   '/images/do4.png', '/images/do5.png', '/images/do6.png', '/images/do7.png',
@@ -24,7 +23,6 @@ export default function OffresList() {
   const [showModal, setShowModal] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
 
-  // ========== ÉTATS POUR LES NOTIFICATIONS ==========
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
@@ -42,7 +40,6 @@ export default function OffresList() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
-  // ========== FONCTION POUR RÉCUPÉRER UNE IMAGE ==========
   const getImageForOffre = (id) => {
     const index = (id * 2) % baseImages.length;
     return baseImages[index];
