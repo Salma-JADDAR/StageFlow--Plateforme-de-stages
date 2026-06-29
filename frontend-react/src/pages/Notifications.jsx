@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { getNotifications, markAsRead, markAllRead } from '../api/notification';
 import LoadingSpinner from '../components/LoadingSpinner';
 import toast from 'react-hot-toast';
-
 export default function Notifications() {
   const [notifs, setNotifs] = useState([]);
   const [loading, setLoading] = useState(true);
