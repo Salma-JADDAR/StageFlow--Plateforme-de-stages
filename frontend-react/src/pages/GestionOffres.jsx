@@ -3,8 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
-
-// Images pour l'avatar aléatoire
+e
 const avatarImages = [
   '/images/formation1.png', '/images/formation2.png', '/images/formation3.png',
   '/images/formation4.png', '/images/formation5.png', '/images/formation6.png',
@@ -12,7 +11,6 @@ const avatarImages = [
   '/images/fomration7.png',
 ];
 
-// Images pour les cartes
 const baseImages = [
   '/images/do.png', '/images/do1.png', '/images/do2.png', '/images/do3.png',
   '/images/do4.png', '/images/do5.png', '/images/do6.png', '/images/do7.png',
@@ -20,7 +18,6 @@ const baseImages = [
   '/images/doo2.png', '/images/doo3.png', '/images/doo4.png', '/images/doo5.png',
 ];
 
-// Images pour la section "Pourquoi StageFlow"
 const whyImages = [
   '/images/why1.png',
   '/images/why2.png',
@@ -28,7 +25,6 @@ const whyImages = [
   '/images/why4.png',
 ];
 
-// Images pour les cartes astuces
 const tipImages = [
   '/images/e1.png',
   '/images/e2.png',
