@@ -16,7 +16,6 @@ export default function DashboardEtudiant() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  // ========== NOTIFICATIONS ==========
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
@@ -30,7 +29,6 @@ export default function DashboardEtudiant() {
     tauxSuccess: 0
   });
 
-  // Base d'images
   const baseImages = [
     '/images/do.png', '/images/do1.png', '/images/do2.png', '/images/do3.png',
     '/images/do4.png', '/images/do5.png', '/images/do6.png', '/images/do7.png',
@@ -38,7 +36,7 @@ export default function DashboardEtudiant() {
     '/images/doo2.png', '/images/doo3.png', '/images/doo4.png', '/images/doo5.png',
   ];
 
-  // ========== FETCH NOTIFICATIONS ==========
+
   const fetchNotifications = async () => {
     try {
       const response = await api.get('/notifications');
