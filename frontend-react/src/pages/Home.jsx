@@ -14,12 +14,10 @@ export default function Home() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  // ========== ÉTATS POUR LES NOTIFICATIONS ==========
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
 
-  // ========== FONCTIONS NOTIFICATIONS ==========
   const fetchNotifications = async () => {
     try {
       const response = await api.get('/notifications');
