@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { getCandidaturesRecruteur, accepterCandidature, refuserCandidature } from '../api/candidature';
 import LoadingSpinner from '../components/LoadingSpinner';
 import toast from 'react-hot-toast';
-
 export default function GestionCandidatures() {
   const [candidatures, setCandidatures] = useState([]);
   const [loading, setLoading] = useState(true);
