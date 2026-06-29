@@ -4,7 +4,6 @@ import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
 
-// Images pour l'avatar aléatoire (fallback)
 const avatarImages = [
   '/images/formation1.png', '/images/formation2.png', '/images/formation3.png',
   '/images/formation4.png', '/images/formation5.png', '/images/formation6.png',
@@ -33,12 +32,10 @@ export default function DashboardRecruteur() {
   const [chartPeriod, setChartPeriod] = useState('week');
   const [candidaturesParJour, setCandidaturesParJour] = useState([]);
 
-  // ========== ÉTATS POUR LES NOTIFICATIONS ==========
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
 
-  // ========== ÉTATS POUR LE MODAL DE PUBLICATION (AVEC NIVEAU ET CATÉGORIE) ==========
   const [showPublierModal, setShowPublierModal] = useState(false);
   const [publierLoading, setPublierLoading] = useState(false);
   const [competencesList, setCompetencesList] = useState([]);
