@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-
 export default function OffreCard({ offre }) {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
