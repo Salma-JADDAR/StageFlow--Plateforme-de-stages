@@ -20,8 +20,7 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [entreprises, setEntreprises] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  
-  // État pour le nouveau formulaire d'entreprise avec upload de logo
+ 
   const [newEntreprise, setNewEntreprise] = useState({
     nom: '', emailContact: '', telephone: '', ville: '', 
     adresse: '', siteWeb: '', description: '', logoUrl: ''
