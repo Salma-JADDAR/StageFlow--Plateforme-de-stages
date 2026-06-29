@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 export default function Debug() {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
-
   useEffect(() => {
     const t = localStorage.getItem('token');
     const u = localStorage.getItem('user');
