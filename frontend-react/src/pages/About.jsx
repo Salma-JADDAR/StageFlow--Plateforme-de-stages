@@ -11,12 +11,11 @@ export default function About() {
   const [counterValues, setCounterValues] = useState({ offres: 0, entreprises: 0, etudiants: 0, satisfaction: 0 });
   const statsRef = useRef(null);
 
-  // ========== NOTIFICATIONS ==========
+
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
 
-  // ========== FONCTIONS NOTIFICATIONS ==========
   const fetchNotifications = async () => {
     try {
       const response = await api.get('/notifications');
