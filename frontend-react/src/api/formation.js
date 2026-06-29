@@ -1,5 +1,4 @@
 import api from './axios';
-
 export const getFormations = () => api.get('/formations');
 export const createFormation = (data) => api.post('/formations', data);
 export const updateFormation = (id, data) => api.put(`/formations/${id}`, data);
