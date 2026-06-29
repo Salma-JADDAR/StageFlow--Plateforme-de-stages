@@ -4,7 +4,6 @@ import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
 
-// Images pour l'avatar aléatoire
 const avatarImages = [
   '/images/formation1.png', '/images/formation2.png', '/images/formation3.png',
   '/images/formation4.png', '/images/formation5.png', '/images/formation6.png',
