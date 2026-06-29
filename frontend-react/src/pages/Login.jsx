@@ -16,12 +16,11 @@ export default function Login() {
     setLoading(true);
     
     try {
-      // 🔥 login() va maintenant lancer une erreur si elle échoue
+    
       const loggedUser = await login(email, password);
-      
-      // Si on arrive ici, la connexion a réussi
+  
       if (loggedUser && loggedUser.role) {
-        // Redirection basée sur le rôle
+      
         if (loggedUser.role === 'admin') {
           toast.success('Bienvenue administrateur !');
           navigate('/dashboard-admin');
@@ -37,11 +36,9 @@ export default function Login() {
       }
       
     } catch (error) {
-      // 🔥 L'ERREUR EST CAPTURÉE ICI
+  
       console.error('🔴 Erreur de connexion:', error);
-      
-      // Le toast est déjà affiché dans AuthContext, mais on peut en ajouter un autre
-      // toast.error(error.response?.data?.message || 'Erreur de connexion');
+ 
       
     } finally {
       setLoading(false);
