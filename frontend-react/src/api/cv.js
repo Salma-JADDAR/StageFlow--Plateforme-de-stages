@@ -1,5 +1,4 @@
 import api from './axios';
-
 export const uploadCV = (file) => {
   const formData = new FormData();
   formData.append('cv', file);
