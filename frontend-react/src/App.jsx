@@ -32,6 +32,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
+          
           {/* Routes publiques SANS AUTHENTIFICATION */}
           <Route element={<GuestLayout />}>
             <Route path="/" element={<Home />} />
