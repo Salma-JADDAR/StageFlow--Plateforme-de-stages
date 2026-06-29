@@ -5,7 +5,6 @@ import { getAllCompetences, ajouterCompetenceEtudiant, supprimerCompetenceEtudia
 import toast from 'react-hot-toast';
 import api from '../api/axios';
 
-// Images pour l'avatar aléatoire
 const avatarImages = [
   '/images/formation1.png', '/images/formation2.png', '/images/formation3.png',
   '/images/formation4.png', '/images/formation5.png', '/images/formation6.png',
@@ -13,7 +12,6 @@ const avatarImages = [
   '/images/fomration7.png',
 ];
 
-// Images pour les cartes de compétences
 const competenceImages = [
   '/images/do.png', '/images/do1.png', '/images/do2.png', '/images/do3.png',
   '/images/do4.png', '/images/do5.png', '/images/do6.png', '/images/do7.png',
