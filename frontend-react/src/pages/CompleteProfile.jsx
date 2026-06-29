@@ -17,7 +17,6 @@ export default function CompleteProfile() {
   const [loading, setLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Formations
   const [formations, setFormations] = useState([]);
   const [selectedFormationId, setSelectedFormationId] = useState('');
   const [showFormationModal, setShowFormationModal] = useState(false);
@@ -26,7 +25,6 @@ export default function CompleteProfile() {
   });
   const [pendingFormations, setPendingFormations] = useState([]);
 
-  // ========== ÉTATS POUR MODIFIER UNE FORMATION EXISTANTE ==========
   const [showEditFormationModal, setShowEditFormationModal] = useState(false);
   const [editFormation, setEditFormation] = useState(null);
   const [editFormationData, setEditFormationData] = useState({
@@ -34,7 +32,6 @@ export default function CompleteProfile() {
     anneeFin: ''
   });
 
-  // Compétences
   const [competences, setCompetences] = useState([]);
   const [selectedCompetences, setSelectedCompetences] = useState([]);
   const [showCompetenceModal, setShowCompetenceModal] = useState(false);
