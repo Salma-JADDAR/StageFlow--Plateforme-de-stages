@@ -4,7 +4,6 @@ import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
 
-// Images pour les cartes de recommandations
 const baseImages = [
   '/images/do.png', '/images/do1.png', '/images/do2.png', '/images/do3.png',
   '/images/do4.png', '/images/do5.png', '/images/do6.png', '/images/do7.png',
@@ -27,7 +26,7 @@ export default function RecommandationsIA() {
   const [submitting, setSubmitting] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [profilePhoto, setProfilePhoto] = useState(null); // ← Photo réelle de l'étudiant
+  const [profilePhoto, setProfilePhoto] = useState(null); 
   const [selectedStatus, setSelectedStatus] = useState('tous');
   const [searchTerm, setSearchTerm] = useState('');
   const [stats, setStats] = useState({
