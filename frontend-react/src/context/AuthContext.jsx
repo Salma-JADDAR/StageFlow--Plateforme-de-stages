@@ -1,11 +1,8 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
-
 const AuthContext = createContext();
-
 export const useAuth = () => useContext(AuthContext);
-
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -39,13 +36,11 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // 🔥 MODIFICATION IMPORTANTE - Lancer une erreur au lieu de retourner false
   const login = async (email, password) => {
     try {
       const response = await api.post('/login', { email, password });
       const { token, user: loggedUser } = response.data;
-      
-      // 🔥 VÉRIFIER QUE L'UTILISATEUR A BIEN UN RÔLE
+ 
       if (!loggedUser || !loggedUser.role) {
         throw new Error('Données utilisateur invalides');
       }
@@ -54,17 +49,15 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(loggedUser));
       setUser(loggedUser);
       toast.success('Connecté avec succès');
-      return loggedUser; // Retourner l'utilisateur
+      return loggedUser; 
       
     } catch (error) {
-      // 🔥 LANCER L'ERREUR POUR QU'ELLE SOIT CAPTURÉE DANS Login.js
+     
       console.error('❌ Erreur de connexion:', error.response?.data || error.message);
-      
-      // Afficher le message d'erreur
+  
       const errorMessage = error.response?.data?.message || 'Erreur de connexion';
       toast.error(errorMessage);
-      
-      // 🔥 LANCER L'ERREUR
+
       throw error;
     }
   };
