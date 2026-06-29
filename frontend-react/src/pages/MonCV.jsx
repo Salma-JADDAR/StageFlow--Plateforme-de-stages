@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
-
 export default function MonCV() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -27,7 +26,6 @@ export default function MonCV() {
     enAttente: 0
   });
 
-  // ========== NOTIFICATIONS ==========
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
