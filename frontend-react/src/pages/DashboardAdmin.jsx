@@ -4,7 +4,6 @@ import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 import toast from 'react-hot-toast';
 
-// ========== IMAGES D'AVATARS (PERSONNES) ==========
 const avatarImages = [
   'https://i.pravatar.cc/150?img=1',
   'https://i.pravatar.cc/150?img=5',
@@ -20,7 +19,6 @@ const avatarImages = [
   'https://i.pravatar.cc/150?img=75',
 ];
 
-// ========== IMAGES POUR LES OFFRES ==========
 const offreImages = [
   'https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=150&fit=crop',
   'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=300&h=150&fit=crop',
@@ -34,7 +32,6 @@ const offreImages = [
   'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=300&h=150&fit=crop',
 ];
 
-// ========== IMAGES POUR LES ENTREPRISES ==========
 const entrepriseImages = [
   'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=50&h=50&fit=crop',
   'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=50&h=50&fit=crop',
