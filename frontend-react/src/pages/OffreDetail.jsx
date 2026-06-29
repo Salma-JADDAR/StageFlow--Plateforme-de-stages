@@ -21,18 +21,15 @@ export default function OffreDetail() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  // ========== NOTIFICATIONS ==========
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
 
-  // Fonction de déconnexion
   const handleLogout = async () => {
     await logout();
     navigate('/login');
   };
 
-  // Fonction pour rediriger vers le bon dashboard selon le rôle
   const getDashboardLink = () => {
     if (!user) return '/login';
     if (user.role === 'etudiant') return '/dashboard';
@@ -41,7 +38,6 @@ export default function OffreDetail() {
     return '/profile';
   };
 
-  // ========== FONCTIONS NOTIFICATIONS ==========
   const fetchNotifications = async () => {
     try {
       const response = await api.get('/notifications');
